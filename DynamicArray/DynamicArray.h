@@ -53,7 +53,7 @@ public:
 	// Insert a dynamic array in the middle
 	void Insert(int index, const DynamicArray<T>& other);
 	//Remove a specific thing from the list
-	void Remove(int index);
+	void RemoveIndex(int index);
 	// Use const to show there will be no changes, it is just a container
 	// Remove a value from the list
 	void Remove(const T& value);
@@ -265,7 +265,7 @@ inline void DynamicArray<T>::Insert(int index, const DynamicArray<T>& other)
 }
 
 template <typename T>
-inline void DynamicArray<T>::Remove(int index)
+inline void DynamicArray<T>::RemoveIndex(int index)
 {
 	for (int i = index; i < m_length - 1; i++)
 	{

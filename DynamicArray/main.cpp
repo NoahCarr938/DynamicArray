@@ -3,15 +3,23 @@
 
 int main()
 {
-    DynamicArray<int> arr;
-    for (int i = 0; i < arr.Length(); i++)
+    DynamicArray<int> intArray;
+    intArray.Add(1);
+    intArray.Add(109);
+    intArray.Add(1090);
+
+    for (int i = 0; i < intArray.Length(); i++)
     {
         // Do stuff
     }
 
-    for (int element : arr)
-    {
+    intArray.RemoveIndex(2);
+    intArray.Remove(1090);
+    std::cout << std::endl;
 
+    for (int element : intArray)
+    {
+        std::cout << element << std::endl;
     }
 
     return 0;
