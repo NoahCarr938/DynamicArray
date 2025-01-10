@@ -77,7 +77,7 @@ template<typename T>
 inline DynamicArray<T>::DynamicArray()
 {
 	m_length = 0;
-	m_array = new T[m_legnth];
+	m_array = new T[m_length];
 }
 
 template<typename T>
@@ -86,7 +86,7 @@ inline DynamicArray<T>::DynamicArray(const T* array, int size)
 	
 	m_length = size;
 	m_array = new T[m_length];
-	for  (int = 0; (int < m_length; i++)
+	for  (int i = 0; i < m_length; i++)
 	{
 		m_array[i] = array[i];
 	}
@@ -99,7 +99,7 @@ inline DynamicArray<T>::DynamicArray(const DynamicArray<T>& other)
 	m_length = other.m_length;
 	m_array = new T[m_length];
 	// Copy all the stuff in
-	for (int i = 0; i < m_length; i++);
+	for (int i = 0; i < m_length; i++)
 	{
 		m_array[i] = other.m_array[i];
 	}
@@ -117,7 +117,7 @@ inline DynamicArray<T>& DynamicArray<T>::operator=(const DynamicArray<T>& other)
 	m_length = other.m_length;
 	// Delete array and then make a new one using the length
 	delete[] m_array;
-	m_array = newT[m_length];
+	m_array = new T[m_length];
 	// Copying
 	for (int i = 0; i < m_length; i++)
 	{
@@ -230,7 +230,7 @@ inline void DynamicArray<T>::Insert(int index, const T& value)
 	Resize(m_length + 1);
 	for (int i = m_length - 1; i > index; i--)
 	{
-		m_array[i] = m_array[i - 1]
+		m_array[i] = m_array[i - 1];
 	}
 	m_array[index] = value;
 }
@@ -269,7 +269,7 @@ inline void DynamicArray<T>::RemoveIndex(int index)
 {
 	for (int i = index; i < m_length - 1; i++)
 	{
-		m_array[i] = m_array[i + 1]
+		m_array[i] = m_array[i + 1];
 	}
 	Resize(m_length - 1);
 }
